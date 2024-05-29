@@ -1,20 +1,26 @@
 package com.example.tesla
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.tesla.databinding.ActivitySignUpPageBinding
 
 class Sign_Up_Page : AppCompatActivity() {
+    private val binding:ActivitySignUpPageBinding by lazy {
+        ActivitySignUpPageBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_sign_up_page)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(binding.root)
+        binding.signIn.setOnClickListener {
+            val intent = Intent(this,Sign_In_Page::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
