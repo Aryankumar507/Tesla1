@@ -24,11 +24,12 @@ class Sign_Up_Page : AppCompatActivity() {
         // Initialize Firebase auth
         auth = FirebaseAuth.getInstance()
         binding.signIn.setOnClickListener {
-            val intent = Intent(this,Sign_In_Page::class.java)
+            val intent = Intent(this, Sign_In_Page::class.java)
             startActivity(intent)
             finish()
+            }
 
-            binding.resisterButton.setOnClickListener {
+            binding.registrationButton.setOnClickListener {
                 // get text from Edit text
                 val email = binding.email.text.toString()
                 val password = binding.password.text.toString()
@@ -41,16 +42,15 @@ class Sign_Up_Page : AppCompatActivity() {
                     auth.createUserWithEmailAndPassword(email,password)
                         .addOnCompleteListener(this){task ->
                             if(task.isSuccessful){
-                                Toast.makeText(this,"Resistration Succesfull",Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this,"Registration Succesfull",Toast.LENGTH_SHORT).show()
                                 startActivity(Intent(this,Sign_In_Page::class.java))
                                 finish()
                             }
                             else {
-                                Toast.makeText(this,"Resistration Failed:${task.exception?.message}",Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this,"Registration Failed:${task.exception?.message}",Toast.LENGTH_SHORT).show()
                             }
                         }
                 }
             }
         }
-    }
 }

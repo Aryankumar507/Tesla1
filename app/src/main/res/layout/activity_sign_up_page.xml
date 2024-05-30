@@ -78,9 +78,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/resister_button"
+        android:id="@+id/registration_button"
         android:layout_marginHorizontal="10dp"
-        android:text="Sign Up"
+        android:text="Registration Button"
         android:textSize="20sp"
         android:backgroundTint="#2E89E8"
         android:textColor="@color/white"
