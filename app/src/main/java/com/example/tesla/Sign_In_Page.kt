@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tesla.databinding.ActivitySignInPageBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import java.util.zip.Inflater
 
 class Sign_In_Page : AppCompatActivity() {
@@ -41,12 +42,22 @@ class Sign_In_Page : AppCompatActivity() {
                         if(task.isSuccessful){
                             Toast.makeText(this,"Succesfull",Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this,MainActivity::class.java))
+                            finish()
                         }
                         else{
                             Toast.makeText(this,"Sign In Failed:${task.exception?.message}",Toast.LENGTH_SHORT).show()
                         }
                     }
             }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val CurrentUser:FirebaseUser? = auth.currentUser
+        if (CurrentUser!=null){
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
         }
     }
 }
