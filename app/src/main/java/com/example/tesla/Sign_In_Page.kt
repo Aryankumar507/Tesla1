@@ -1,6 +1,7 @@
 package com.example.tesla
 
 import android.app.Activity
+import android.content.ContentProviderClient
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tesla.databinding.ActivitySignInPageBinding
+import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import java.util.zip.Inflater
@@ -51,6 +53,8 @@ class Sign_In_Page : AppCompatActivity() {
             }
         }
     }
+
+
 
     override fun onStart() {
         super.onStart()
