@@ -1,5 +1,6 @@
 package com.example.tesla
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
@@ -13,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +40,10 @@ class MainActivity : AppCompatActivity() {
                R.id.gallery->Toast.makeText(applicationContext,"gallery clicked",Toast.LENGTH_SHORT).show()
                R.id.about->Toast.makeText(applicationContext,"about clicked",Toast.LENGTH_SHORT).show()
                R.id.login->Toast.makeText(applicationContext,"login clicked",Toast.LENGTH_SHORT).show()
-               R.id.logout->Toast.makeText(applicationContext,"logout clicked",Toast.LENGTH_SHORT).show()
+               R.id.logout->{Toast.makeText(applicationContext,"logout clicked",Toast.LENGTH_SHORT).show()
+                            FirebaseAuth.getInstance().signOut()
+                             startActivity(Intent(this,Sign_In_Page::class.java))}
+
                R.id.share->Toast.makeText(applicationContext,"share clicked",Toast.LENGTH_SHORT).show()
                R.id.rate_us->Toast.makeText(applicationContext,"rate us clicked",Toast.LENGTH_SHORT).show()
            }
