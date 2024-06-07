@@ -9,9 +9,9 @@
             android:icon="@drawable/baseline_add_home_24"
             android:title="Contact"
             />
-        <item android:id="@+id/gallery"
+        <item android:id="@+id/open_notes"
             android:icon="@drawable/baseline_add_home_24"
-            android:title="Gallery"
+            android:title="Open Notes"
             />
     </group>
 

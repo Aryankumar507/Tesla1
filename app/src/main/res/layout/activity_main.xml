@@ -7,29 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start"
+    tools:openDrawer=""
     >
-     <LinearLayout
+     <androidx.constraintlayout.widget.ConstraintLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="vertical">
+         android:background="#2E89E8"
+       >
+
          <androidx.appcompat.widget.Toolbar
              android:layout_width="match_parent"
              android:layout_height="70dp"
+             android:background="#232323"
              android:id="@+id/toolbar"
-             android:background="#2E89E6"
              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+             app:layout_constraintBottom_toTopOf="@+id/imageView"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintVertical_bias="0.0" />
 
-         <TextView
-             android:layout_width="match_parent"
+         <ImageView
+             android:id="@+id/imageView"
+             android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="Work in progress"
-             android:textSize="30sp"
-             android:textStyle="bold"
-             android:textColor="@color/black"
-             android:textAlignment="center" />
-     </LinearLayout>
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:srcCompat="@drawable/rafiki" />
+
+         <Button
+             android:id="@+id/add_notes"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Add Notes"
+             android:backgroundTint="#232323"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.906"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/imageView"
+             app:layout_constraintVertical_bias="0.781" />
+     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
