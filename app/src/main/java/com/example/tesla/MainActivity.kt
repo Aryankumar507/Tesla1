@@ -47,7 +47,9 @@ class MainActivity : AppCompatActivity() {
            when(it.itemId){
                R.id.home->Toast.makeText(applicationContext,"home clicked",Toast.LENGTH_SHORT).show()
                R.id.Contact->Toast.makeText(applicationContext,"contact clicked",Toast.LENGTH_SHORT).show()
-               R.id.open_notes->Toast.makeText(applicationContext,"gallery clicked",Toast.LENGTH_SHORT).show()
+               R.id.open_notes->{Toast.makeText(applicationContext,"gallery clicked",Toast.LENGTH_SHORT).show()
+                                 startActivity(Intent(this,AllNotes::class.java))
+               }
                R.id.about->Toast.makeText(applicationContext,"about clicked",Toast.LENGTH_SHORT).show()
                R.id.login->Toast.makeText(applicationContext,"login clicked",Toast.LENGTH_SHORT).show()
                R.id.logout->{Toast.makeText(applicationContext,"logout clicked",Toast.LENGTH_SHORT).show()
