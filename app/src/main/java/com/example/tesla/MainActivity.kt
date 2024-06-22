@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener {
            when(it.itemId){
                R.id.home->Toast.makeText(applicationContext,"home clicked",Toast.LENGTH_SHORT).show()
-               R.id.Contact->Toast.makeText(applicationContext,"contact clicked",Toast.LENGTH_SHORT).show()
+               R.id.images->{Toast.makeText(applicationContext,"contact clicked",Toast.LENGTH_SHORT).show()
+                          startActivity(Intent(this,Add_Images::class.java))
+               }
                R.id.open_notes->{Toast.makeText(applicationContext,"gallery clicked",Toast.LENGTH_SHORT).show()
                                  startActivity(Intent(this,AllNotes::class.java))
                }
