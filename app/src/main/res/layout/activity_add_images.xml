@@ -9,24 +9,6 @@
     android:orientation="vertical"
     android:background="#2E89E8">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/showimage"
-                android:layout_margin="10dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,5 +19,11 @@
         android:backgroundTint="@color/white"
         android:textColor="#2E89E8"
         android:textSize="15dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageRecyclerView"
+        tools:listitem="@layout/image_item"/>
 
 </LinearLayout>

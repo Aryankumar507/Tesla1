@@ -4,6 +4,7 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+
 android {
     namespace = "com.example.tesla"
     compileSdk = 34
@@ -63,5 +64,7 @@ dependencies {
     // Also add the dependency for the Google Play services library and specify its version
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation ("com.squareup.picasso:picasso:+")
+    implementation ("com.github.bumptech.glide:glide:+")
+
 }
 
