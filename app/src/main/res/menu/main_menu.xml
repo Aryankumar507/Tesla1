@@ -3,15 +3,19 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/home"
             android:icon="@drawable/baseline_add_home_24"
-            android:title="Home"
+            android:title="Video"
             />
         <item android:id="@+id/images"
             android:icon="@drawable/baseline_add_home_24"
-            android:title="Images"
+            android:title="Upload Images and Video"
             />
         <item android:id="@+id/open_notes"
             android:icon="@drawable/baseline_add_home_24"
             android:title="Open Notes"
+            />
+        <item android:id="@+id/open_image"
+            android:icon="@drawable/baseline_add_home_24"
+            android:title="Open Images"
             />
     </group>
 

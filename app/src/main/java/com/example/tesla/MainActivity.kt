@@ -45,12 +45,19 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
            when(it.itemId){
-               R.id.home->Toast.makeText(applicationContext,"home clicked",Toast.LENGTH_SHORT).show()
-               R.id.images->{Toast.makeText(applicationContext,"contact clicked",Toast.LENGTH_SHORT).show()
+               R.id.home->{Toast.makeText(applicationContext,"Video",Toast.LENGTH_SHORT).show()
+                           startActivity(Intent(this,VideoActivity::class.java))
+
+               }
+               R.id.images->{Toast.makeText(applicationContext,"Images",Toast.LENGTH_SHORT).show()
                           startActivity(Intent(this,Add_Images::class.java))
                }
-               R.id.open_notes->{Toast.makeText(applicationContext,"gallery clicked",Toast.LENGTH_SHORT).show()
+               R.id.open_notes->{Toast.makeText(applicationContext,"All Notes",Toast.LENGTH_SHORT).show()
                                  startActivity(Intent(this,AllNotes::class.java))
+               }
+
+               R.id.open_image->{Toast.makeText(applicationContext,"All Notes",Toast.LENGTH_SHORT).show()
+                   startActivity(Intent(this,ShowImagesActivity::class.java))
                }
                R.id.about->Toast.makeText(applicationContext,"about clicked",Toast.LENGTH_SHORT).show()
                R.id.login->Toast.makeText(applicationContext,"login clicked",Toast.LENGTH_SHORT).show()

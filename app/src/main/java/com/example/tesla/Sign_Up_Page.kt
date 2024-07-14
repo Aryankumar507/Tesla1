@@ -39,7 +39,7 @@ class Sign_Up_Page : AppCompatActivity() {
                     Toast.makeText(this,"Please fill all the details",Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    auth.createUserWithEmailAndPassword(email,password)
+                      auth.createUserWithEmailAndPassword(email,password)
                         .addOnCompleteListener(this){task ->
                             if(task.isSuccessful){
                                 Toast.makeText(this,"Registration Succesfull",Toast.LENGTH_SHORT).show()
@@ -55,4 +55,5 @@ class Sign_Up_Page : AppCompatActivity() {
 
 
         }
+
 }
