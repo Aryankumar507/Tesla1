@@ -65,7 +65,9 @@ class MainActivity : AppCompatActivity() {
                             FirebaseAuth.getInstance().signOut()
                              startActivity(Intent(this,Sign_In_Page::class.java))}
 
-               R.id.share->Toast.makeText(applicationContext,"share clicked",Toast.LENGTH_SHORT).show()
+               R.id.share->{Toast.makeText(applicationContext,"share clicked",Toast.LENGTH_SHORT).show()
+                   startActivity(Intent(this,Notification::class.java))
+               }
                R.id.rate_us->Toast.makeText(applicationContext,"rate us clicked",Toast.LENGTH_SHORT).show()
            }
             drawerLayout.closeDrawer(GravityCompat.START)
